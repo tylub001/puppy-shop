@@ -19,8 +19,6 @@ app.use((req, res, next) => {
 
 const apiRouter = express.Router();
 
-
-
 // ✅ USERS
 apiRouter.get("/users", async (req, res) => {
   console.log("GET /api/users hit");
@@ -179,8 +177,9 @@ apiRouter.post("/create-checkout-session", async (req, res) => {
         },
       ],
       mode: "payment",
-      success_url: `http://localhost:3000/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: "http://localhost:3000/cancel",
+      success_url:
+        "https://puppy-shop-production.up.railway.app/success?session_id={CHECKOUT_SESSION_ID}",
+      cancel_url: "https://puppy-shop-production.up.railway.app/cancel",
     });
 
     await pool.query("UPDATE users SET stripe_customer_id = $1 WHERE id = $2", [
@@ -223,12 +222,10 @@ apiRouter.post("/save-card", authenticateToken, async (req, res) => {
 
 app.use("/api", apiRouter);
 
-
 app.use(express.static(path.join(__dirname, "frontend/build")));
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "frontend/build", "index.html"));
 });
-
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
