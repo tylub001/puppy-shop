@@ -221,9 +221,7 @@ apiRouter.post("/save-card", authenticateToken, async (req, res) => {
 // ✅ Mount all /api routes
 app.use("/api", apiRouter);
 
-app.get("/", (req, res) => {
-  res.send("🐾 Welcome to the Puppy Shop API!");
-});
+
 const path = require("path");
 
 app.use(express.static(path.join(__dirname, "frontend/build")));
