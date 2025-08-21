@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import RegisterForm from "./components/RegisterForm";
 import LoginForm from "./components/LoginForm";
 import Profile from "./components/Profile";
@@ -25,7 +25,7 @@ function App() {
   }, []);
 
   return (
-    <Router>
+    
       <div className="App">
         <Navbar isLoggedIn={isLoggedIn} handleLogout={handleLogout} />
         <Routes>
@@ -44,7 +44,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </div>
-    </Router>
+
   );
 }
 
