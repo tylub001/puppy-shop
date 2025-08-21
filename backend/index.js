@@ -6,6 +6,7 @@ const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const authenticateToken = require("./auth");
+const path = require("path");
 
 const app = express();
 app.use(cors());
@@ -17,6 +18,8 @@ app.use((req, res, next) => {
 });
 
 const apiRouter = express.Router();
+
+
 
 // ✅ USERS
 apiRouter.get("/users", async (req, res) => {
@@ -218,19 +221,15 @@ apiRouter.post("/save-card", authenticateToken, async (req, res) => {
   }
 });
 
-// ✅ Mount all /api routes
 app.use("/api", apiRouter);
 
 
-const path = require("path");
-
 app.use(express.static(path.join(__dirname, "frontend/build")));
-
-app.use((req, res) => {
+app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "frontend/build", "index.html"));
 });
 
-// ✅ Start server
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
