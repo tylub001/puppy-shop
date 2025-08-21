@@ -1,0 +1,52 @@
+.puppies-page {
+  padding: 40px;
+  background-color: #fffaf5;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+}
+
+.puppies-page h2 {
+  font-size: 2rem;
+  color: #ff69b4;
+  margin-bottom: 30px;
+}
+
+.puppy-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.puppy-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  width: 220px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.puppy-card:hover {
+  transform: scale(1.05);
+}
+
+.puppy-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.puppy-card h3 {
+  color: #4a4a4a;
+  margin-bottom: 8px;
+}
+
+.puppy-card p {
+  font-size: 1.1rem;
+  color: #4caf50;
+  font-weight: bold;
+}
