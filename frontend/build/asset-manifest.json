@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/puppy-shop/static/css/main.5fdb67b4.css",
+    "main.js": "/puppy-shop/static/js/main.2beae6e1.js",
+    "static/js/453.670e15c7.chunk.js": "/puppy-shop/static/js/453.670e15c7.chunk.js",
+    "index.html": "/puppy-shop/index.html",
+    "main.5fdb67b4.css.map": "/puppy-shop/static/css/main.5fdb67b4.css.map",
+    "main.2beae6e1.js.map": "/puppy-shop/static/js/main.2beae6e1.js.map",
+    "453.670e15c7.chunk.js.map": "/puppy-shop/static/js/453.670e15c7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5fdb67b4.css",
+    "static/js/main.2beae6e1.js"
+  ]
+}
