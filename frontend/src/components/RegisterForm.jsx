@@ -17,7 +17,7 @@ function RegisterForm({ setIsLoggedIn }) {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("https://puppy-shop-production.up.railway.app/api/register", {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, password }),
