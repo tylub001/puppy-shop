@@ -124,10 +124,7 @@ function PuppyShop({ profile }) {
   };
 
   const navigate = useNavigate();
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    navigate("/");
-  };
+  
 
   return (
     <div>
