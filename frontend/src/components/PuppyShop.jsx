@@ -72,7 +72,7 @@ function PuppyShop({ profile }) {
     try {
       const token = localStorage.getItem("token");
 
-      const res = await fetch("http://localhost:5000/purchase", {
+      const res = await fetch("https://puppy-shop-production.up.railway.app/api/purchase", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -105,7 +105,7 @@ function PuppyShop({ profile }) {
     const stripe = await stripePromise;
 
     const response = await fetch(
-      "http://localhost:5000/create-checkout-session",
+      "https://puppy-shop-production.up.railway.app/api/create-checkout-session",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },

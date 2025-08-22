@@ -10,7 +10,7 @@ function Profile() {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const res = await fetch("http://localhost:5000/profile", {
+        const res = await fetch("https://puppy-shop-production.up.railway.app/api/profile", {
           headers: { Authorization: `Bearer ${token}` },
         });
         const data = await res.json();
@@ -24,7 +24,7 @@ function Profile() {
   }, [token]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/user-orders", {
+    fetch("https://puppy-shop-production.up.railway.app/api/user-orders", {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => res.json())
@@ -40,7 +40,7 @@ function Profile() {
     if (!window.confirm("Are you sure you want to delete this order?")) return;
 
     try {
-      const res = await fetch(`http://localhost:5000/user-orders/${orderId}`, {
+      const res = await fetch(`https://puppy-shop-production.up.railway.app/api/user-orders/${orderId}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,

@@ -10,7 +10,7 @@ function Success() {
   useEffect(() => {
     const token = localStorage.getItem("token");
 
-    fetch("http://localhost:5000/save-card", {
+    fetch("https://puppy-shop-production.up.railway.app/api/save-card", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
