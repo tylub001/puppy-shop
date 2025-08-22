@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+
 import { loadStripe } from "@stripe/stripe-js";
 import "./PuppyShop.css";
 
@@ -123,7 +123,7 @@ function PuppyShop({ profile }) {
     await stripe.redirectToCheckout({ sessionId: session.id });
   };
 
-  const navigate = useNavigate();
+
   
 
   return (
